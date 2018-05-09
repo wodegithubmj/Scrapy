@@ -1,0 +1,16 @@
+4.6 代理服务器设置
+    同一个IP爬取同一个网页，时间长了就会被屏蔽，使用代理服务器可以解决这一问题。
+    urllib使用代理的代码略。
+    实际过程中可以准备多个IP代理轮流进行爬取。
+    
+4.7 DebugLog实战
+    若需要边运行边打印调试日志，需开启DebugLog，步骤如下：
+    1）分别使用urllib.request.HTTPHandler()和urllib.request.HTTPSHandler()将debuglevel设置为1。
+    2）使用urllib.request.build_opener()创建自定义的opener对象，并使用1）中设置的值作为参数。
+    3）用urllib.request.install_opener()创建全局默认的opener对象，这样，在使用urlopen()时，也会使用我们安装的opener对象。
+    4）进行后续相应的操作，比如urlopen()等。
+    代码省略
+    
+4.8 异常处理神器——URLError实战
+    Python爬虫中，经常要处理一些与URL相关的异常，使用URLError类，先导入urllib.error模块。
+    进行异常处理，经常使用try...except语句，主要用到URLError类和它的一个子类——HTTPError类。
