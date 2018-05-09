@@ -1,0 +1,11 @@
+7.7 Fiddler会话查找功能
+    Ctrl+F键可以调出Fiddler的会话查找界面。
+    
+7.8 Fiddler的其他功能
+    自动响应功能、会话过滤等。
+    
+    在 Filters标签勾选上 Use Filters，并在文本框输入要过滤的域名，多个域名可以用逗号隔开。
+    随后，需要设置Hosts的第二个选项。
+    最后，需要执行。点击 Actions——>Run Filterset now 。
+    
+    
