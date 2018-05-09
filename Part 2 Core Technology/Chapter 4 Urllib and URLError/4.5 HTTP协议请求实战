@@ -1,0 +1,32 @@
+4.5 HTTP协议请求实战
+    HTTP协议请求主要分为6种类型
+    1）GET请求
+    2）POST请求
+    3）PUT请求
+    4）DELETE请求
+    5）HEAD请求
+    6）OPTIONS请求
+    
+    1.GET请求实例分析
+      在百度查询一个关键字使用了GET请求，关键性字段是wd，网址格式是“www.baidu.com/s?wd=关键词”。
+      实现用爬虫自动在百度上查询关键词的代码略。
+    
+      使用汉字作为关键词会出现编码错误。这时需要先用urllib.request.quote(关键词)方法对关键词进行编码。
+      
+      使用GET请求步骤如下：
+      1）构建对应的URL地址，该URL地址包含GET请求的字段名和字段内容等信息且URL地址满足GET请求格式，即"http://网址?字段名1=字段内容1&字段名2=字段内容2"
+      2）以对应的URL为参数，构建Request对象。
+      3）通过urlopen()打开构建的Request对象
+      4）按需求进行后续处理
+      
+    2.POST请求实例分析
+      进行注册、登录等操作都会用到POST请求。
+      
+      使用POST请求的步骤：
+      1）设置好URL地址。
+      2）构建表单数据，使用urllib.parse.urlencode对数据进行编码处理
+      3）创建Request对象，参数包括URL地址和要传递的数据
+      4）使用add_header()添加头信息，模拟浏览器进行爬取
+      5）使用urllib.request.urlopen()打开对应的Request对象，完成信息的传递
+      6）后续处理
+      
