@@ -1,0 +1,9 @@
+7.1 Fiddler是一种常见的抓包分析软件，主要用来分析HTTP请求。
+
+7.2 爬虫与Fiddler的关系
+    利用Fiddler可以更好、更快、更方便地分析对应网页，从而编写出对应的爬虫。
+    
+7.3 Fiddler的基本原理与基本界面
+    有了Fiddler之后，本地应用与服务器之间所有的Request和Response都将经过Fiddler，由Fiddler进行转发。
+    
+7.4 Fiddler捕获会话功能
