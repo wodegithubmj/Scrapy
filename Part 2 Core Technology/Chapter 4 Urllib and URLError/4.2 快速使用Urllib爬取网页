@@ -1,0 +1,17 @@
+4.2 快速使用Urllib爬取网页
+    import urllib.request //导入包
+    file = urllib.request.urlopen("http://www.baidu.com") //爬取百度首页赋值给file
+    data = file.read() //读取网页的全部内容
+    dataLine = file.readline() //读取网页的一行内容
+    print(data) //打印网页的信息，是HTML代码
+    
+    将爬取到的网页保存到本地
+    fileHandle = open("D:/Python35/myweb/part4/1.html","wb")
+    fileHandle.write(data)
+    fileHandle.close()
+    
+    也可以直接用API将爬取到的文件写入本地
+    fileName = urllib.request.urlretrieve("https://www.baidu.com",fileName="D:/Python35/myweb/part4/2.html")
+    
+    此外还有
+    file.info()、file.getcode()、file.geturl()等方法
