@@ -14,3 +14,17 @@
       
     3.全局匹配函数
       上面代码即便源字符串有多个结果符合模式，也只有一个输出。解决思路如下：
+      1）使用re.compile()对正则表达式进行预编译。
+      2）编译后，使用findall()根据正则表达式从源字符串中将匹配的结果全部找出来。
+      示例代码：
+      import re
+      string = "helloomypythonhispythonourpythonend"
+      pattern = re.compile(".python.") #预编译
+      result = patter.findall(string) #找出符合模式的所有结果
+      print(result) #会输出三个结果
+      
+    4.re.sub()函数
+      若想根据正则表达式来替换某些字符串功能，可以使用re.sub()函数。
+      re.sub(pattern,rep,string,max)
+      第一个参数是正则表达式，第二个参数是要替换的字符串，第三个是源字符串，第四个是可选项，代表最多替换的次数，若忽略不写，则将符合模式的结果全部替换。
+      
