@@ -1,0 +1,10 @@
+5.5 什么是Cookie
+    HTTP协议是无状态的，为了避免重复登录操作，需要将登录成功的信息保存下来。保存到客户端用Cookie，保存到服务器端用Session。
+    
+5.6 Cookiejar实战精析
+    在Python3中使用Cookiejar处理Cookie
+    进行Cookie处理的一种常用思路
+    1）导入Cookie处理模块http.cookiejar
+    2）使用http.cookiejar.CookieJar()创建CookieJar对象。
+    3）使用HTTPCookieProcessor创建cookie处理器，并以其为参数构建opener对象。
+    4）创建全局默认的opener对象。
