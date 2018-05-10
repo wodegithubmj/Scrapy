@@ -1,0 +1,16 @@
+5.3 正则表达式常见的函数有re.match()函数、re.search()函数、全局匹配函数、re.sub()函数。
+
+    1.re.match()函数
+      若想要从源字符串的起始位置匹配一个模式，可使用re.match()函数。re.match(pattern,string,flag) //第一个参数是正则表达式，第二个参数是源字符，第三个参数是
+      可选的标志位，可以放模式修正符等信息。匹配失败返回None，匹配成功返回匹配结构。
+      
+    2.re.search()函数会扫描整个字符串并进行对应的匹配。
+      import re
+      string = "hellomypythonhispythons"
+      pattern = ".python."
+      result = re.match(pattern,string)
+      result2 = re.search(pattern,string)
+      result的结果是None，result2的结果是ypythonh。源字符串开始位置不符合正则表达式，所以re.match()匹配不到结果但re.search()可以。
+      
+    3.全局匹配函数
+      上面代码即便源字符串有多个结果符合模式，也只有一个输出。解决思路如下：
