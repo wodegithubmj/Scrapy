@@ -10,4 +10,11 @@
             pat2='<img width="220" height="220" data-img="1" data-lazy-img="//(.+?\.jpg)">'
             
      图片爬虫的一般思路：
-     1）
+     1）建立爬取图片的自定义函数，爬取过程为：首先通过urllib.request.urlopen(url).read()读取网页源码，然后根据第一个正则进行第一次过滤，接着进行第二次
+     过滤，提取目标图片的链接，并将链接地址存储到列表中，随后遍历该列表，分别将对应链接通过urllib.request.urlretrieve(imageurl,filename=imagename)
+     存储到本地。当出现异常可以通过x+=1自动跳到下一个图片。
+     
+     2）通过for驯悍将该分类吓得所有网页爬取一边，链接可构造为url="http://list.jd.com/list.html?cat=9987,653,655&page="+str(i)。每次循环调用上面的函数
+     实现该图片的爬取。
+     
+     源代码如下：
